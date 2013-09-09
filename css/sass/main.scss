@@ -1,0 +1,232 @@
+@import 'normalize';
+@import 'bourbon/bourbon';
+@import 'grid-settings';
+@import 'neat/neat';
+
+$primary: "proxima-nova";
+$red: #C82530;
+$gray: #DDDCDE;
+$yellow: #E0AF5D;
+$blue: #211F2B;
+$green: #97BB43;
+$marker: #403c38;
+
+$padding: 0.75rem;
+
+::selection {
+	background: $yellow;
+	}
+::-moz-selection {
+	background: $yellow;
+}
+
+body {
+	background: $blue;
+	font-family: $primary;
+	color: $gray;
+	font-size: 100%;
+}
+
+h1 {
+		font-style: italic;
+		text-align: center;
+		font-weight: 700;
+		font-size: 2rem;
+		margin: 0;
+		padding: 0;
+		line-height: 100%;
+		@include media($tablet) {
+			font-size: 3rem;
+		}
+}
+
+h2 {
+	margin: 0.25em 0 0 0;
+	padding: 0;
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: 300;
+	line-height: 100%;
+	@include media($tablet) {
+		font-size: 2rem;
+	}
+}
+
+h3 {
+	@extend h2;
+	margin: 1.75rem 0;
+	@include media($tablet) {
+		margin: 2.75rem 0;
+	}
+}
+
+header {
+	padding: 1.25em 0;
+	@include outer-container;
+}
+
+div.cover {
+	background: $gray;
+	border-top: 0.4em solid $yellow;
+	border-bottom: 0.4em solid $yellow;
+  width: 100%;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	@include background-image(url("../images/assets/notebook_3-2.jpg"));
+	@include media($tablet) {
+    @include background-image(url("../images/assets/notebook_1-1.jpg"));
+  }
+  @include media($desktop) {
+    @include background-image(url("../images/assets/notebook_2-3.jpg"));
+  }
+  @include media($widescreen) {
+    @include background-image(url("../images/assets/notebook_16-9.jpg"));
+  }
+}
+
+div.pusher {
+	padding-top: 150%;
+	@include media($tablet) {
+		padding-top: 100%;
+	}
+	@include media($desktop) {
+		padding-top: 66.67%;
+	}
+  @include media($widescreen) {
+    padding-top: 56.25%;
+  }
+}
+
+div.text {
+	display: block;
+	font-family: "gooddog-new", cursive;
+	left: 50%;
+	position: absolute;
+	color: $marker;
+	opacity: 0.9;
+	word-spacing: 0.5em;
+	text-shadow: 0 0 2px rgba($marker, 0.2);
+	@include transform(rotate(-0.6deg));
+	overflow: hidden;
+	width: 80%;
+	margin: 18% 0 0 -40%;
+	line-height: 148%;
+	@include media($tablet) {
+    width: 52%;
+		margin: 17.5% 0 0 -26%;
+		line-height: 154%;
+  }
+	@include media($desktop) {
+    width: 34%;
+		margin: 11.7% 0 0 -17%;
+		line-height: 158%;
+  }
+  @include media($widescreen) {
+    width: 28%;
+		margin: 10% 0 0 -14%;
+		line-height: 158%;
+  }
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+section {
+	padding: 0 $padding;
+	margin-bottom: 2rem;
+	@include outer-container;
+	@include media($tablet) {
+		padding: 0;
+	}
+}
+
+div.editor {
+	padding: 1.25em 0;
+}
+
+label {
+	display: block;
+	margin: 0 0 $padding 0;
+	padding: 0;
+}
+
+input, textarea, button,  #shortURL {
+	margin: 0 0 $padding 0;
+	padding: $padding;
+	font-size: 1.25rem;
+	outline: 0;
+	border: 0;
+	background: $gray;
+	border-radius: 3px;
+	@include fill-parent;
+}
+
+div.name {
+	@include media($tablet) {
+		@include span-columns(2);
+		@include omega(3);
+	}
+}
+
+div.message {
+	@include span-columns(4);
+}
+
+#msgBody {
+	line-height: 1.5em;
+	font-family: $primary;
+	@include span-columns(4);
+}
+
+#count {
+	margin: 0 0 $padding 0;
+	text-align: right;
+	@include shift(3);
+	@include span-columns(1);
+}
+
+button {
+	background: $red;
+	color: white;
+	padding: 1rem 0;
+	@include media($tablet) {
+		@include span-columns(2);
+		@include shift(1);
+	}
+}
+
+.red {
+	color: $red !important;
+}
+
+#shortURL {
+	display: block;
+	text-align: center;
+	background: none;
+	color: $gray;
+	@include media($tablet) {
+		@include span-columns(2);
+		@include shift(1);
+	}
+}
+
+footer {
+	padding: 2rem 0;
+	color: darken($gray, 5%);
+	background: darken($blue, 5%);
+	span {
+		@include span-columns(2);
+	}
+	a {
+		text-align: right;
+		@include span-columns(2);
+		color: $gray;
+	}
+	section {
+		margin-bottom: 0;
+	}
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cleynify</title>
+  <meta name="description" content="Cleynify Cover Letter Creator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="//use.typekit.net/wqi3fjp.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+	<h1>cleynify</h1>
+	<h2>Cover Letter Creator</h2>
+</header>
+
+<div class="cover">
+	<div class="text" id="text">
+		Hi <span id="recipient">Michael</span>,
+
+		<p>Here's a little Javascript app I wrote on the weekend. Hope you don't mind the loud plaid. Looking forward to our conversation Monday AM.</p>
+
+		Sincerely,<br/>
+		<span id="sender">Brad Cerasani</span>
+	</div>
+	<div class="pusher"></div>
+</div>
+
+<section>
+	<h3>Make Your Own!</h3>
+
+	<div class="name">
+		<label for="toName">To</label>
+		<input type='text' name='toName' id="toName" placeholder="Michael" maxlength="20">
+	</div>
+
+	<div class="name">
+		<label for="fromName">From</label>
+		<input type='text' name='fromName' id="fromName" placeholder="Brad Cerasani" maxlength="20">
+	</div>
+
+	<div class="message">
+		<label for="msgBody">Message Body</label>
+		<textarea id="msgBody" rows="4" maxlength="160" placeholder="Looking forward to our conversation Monday AM."></textarea>
+		<span id="count"></span>
+	</div>
+
+	<button type="button" id="urlGenerator">Generate URL</button>
+	<input id="shortURL" value="">
+</section>
+
+<footer>
+	<section>
+		<span>100% Unofficial. Best viewed in Chrome.</span>
+		<a href="http://hire.bradcerasani.me">Hire Me</a>
+	</section>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/application.js"></script>
+<script>
+	$("#text").fitText(1.2);
+
+  $("#shortURL").click(function() {
+    var $this = $(this);
+    $this.select();
+    $this.mouseup(function() {
+        return false;
+    });
+	});
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5977667-28']);
+  _gaq.push(['_setDomainName', 'bradcerasani.me']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
