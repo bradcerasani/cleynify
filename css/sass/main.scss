@@ -108,24 +108,31 @@ div.text {
 	opacity: 0.9;
 	word-spacing: 0.5em;
 	text-shadow: 0 0 2px rgba($marker, 0.2);
-	@include transform(rotate(-0.6deg));
 	overflow: hidden;
 	width: 80%;
-	margin: 18% 0 0 -40%;
+	margin: 0 0 0 -40%;
+	top: 18%;
 	line-height: 148%;
+	@include transform(rotate(-0.6deg));
 	@include media($tablet) {
+		top: 17.5%;
     width: 52%;
-		margin: 17.5% 0 0 -26%;
+		margin: 0 0 0 -26%;
 		line-height: 154%;
   }
 	@include media($desktop) {
     width: 34%;
-		margin: 11.7% 0 0 -17%;
+    top: 0%;
+    top: 17.5%;
+		margin: 0 0 0 -17%;
+		// margin: 11.7% 0 0 -17%;
 		line-height: 158%;
   }
   @include media($widescreen) {
     width: 28%;
-		margin: 10% 0 0 -14%;
+    top: 17.6%;
+		margin: 0 0 0 -14%;
+		// margin: 10% 0 0 -14%;
 		line-height: 158%;
   }
 	p {
@@ -205,8 +212,9 @@ button {
 #shortURL {
 	display: block;
 	text-align: center;
-	background: none;
 	color: $gray;
+	background: none;
+	outline: none;
 	@include media($tablet) {
 		@include span-columns(2);
 		@include shift(1);
