@@ -56,6 +56,10 @@
 
 <div class="dark">
 	<section>
+		<h3>Inspiration</h3>
+		<div id="fitvid">
+			<iframe width="720" height="405" src="//www.youtube.com/embed/ytXELemaLN0" frameborder="0" allowfullscreen></iframe>
+		</div>
 		<h3>Process</h3>
 		<ul class="twoup">
 			<li>
@@ -68,7 +72,7 @@
 			</li>
 			<li>
 				<img src="images/type-matching.jpg" alt="Type Matching" class="story"/>
-				Analyze Type
+				Match Type
 			</li>
 			<li>
 				<img src="images/buildout.png" alt="Buildout" class="story"/>
@@ -90,15 +94,17 @@
 <script src="js/plugins.js"></script>
 <script src="js/application.js"></script>
 <script>
-	$("#text").fitText(1.2);
-
-  $("#shortURL").click(function() {
-    var $this = $(this);
-    $this.select();
-    $this.mouseup(function() {
+	$(document).ready(function(){
+    $("#text").fitText(1.2);
+    $("#fitvid").fitVids();
+  	$("#shortURL").click(function() {
+    	var $this = $(this);
+    	$this.select();
+    	$this.mouseup(function() {
         return false;
-    });
-	});
+    	});
+		});
+  });
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-5977667-28']);
