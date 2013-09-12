@@ -6,6 +6,8 @@
 $primary: "proxima-nova";
 $red: #C82530;
 $gray: #DDDCDE;
+$light-gray: lighten($gray, 10%);
+$dark-gray: darken($gray, 10%);
 $yellow: #E0AF5D;
 $blue: #211F2B;
 $green: #97BB43;
@@ -54,6 +56,16 @@ h2 {
 
 h3 {
 	@extend h2;
+	margin: 1.75rem 0;
+	@include media($tablet) {
+		margin: 2.75rem 0;
+	}
+}
+
+h4 {
+	@extend h2;
+	@include span-columns(4);
+	font-size: 1.25rem;
 	margin: 1.75rem 0;
 	@include media($tablet) {
 		margin: 2.75rem 0;
@@ -142,10 +154,9 @@ div.text {
 }
 
 section {
-	padding: 0 $padding;
-	margin-bottom: 2rem;
+	padding: 0 $padding 2rem $padding;
 	@include outer-container;
-	@include media($tablet) {
+	@include media($desktop) {
 		padding: 0;
 	}
 }
@@ -169,6 +180,13 @@ input, textarea, button,  #shortURL {
 	background: $gray;
 	border-radius: 3px;
 	@include fill-parent;
+}
+
+input, textarea {
+	@include transition-duration(0.2s);
+	&:focus {
+		background: $light-gray;
+	}
 }
 
 div.name {
@@ -199,6 +217,10 @@ button {
 	background: $red;
 	color: white;
 	padding: 1rem 0;
+	@include transition-duration(0.2s);
+	&:hover {
+		background: lighten($red, 5%);
+	}
 	@include media($tablet) {
 		@include span-columns(2);
 		@include shift(1);
@@ -215,23 +237,49 @@ button {
 	color: $gray;
 	background: none;
 	outline: none;
+	margin-bottom: 2rem;
 	@include media($tablet) {
 		@include span-columns(2);
 		@include shift(1);
 	}
 }
 
+img.story {
+	display: block;
+	padding: 0 0 $padding 0;
+	max-width: 100%;
+}
+
+ul.twoup {
+	padding: $padding 0;
+	margin: 0 0 2rem 0;
+	overflow: auto;
+	li {
+		text-align: center;
+		padding: 0 0 2*$padding 0;
+		@include span-columns(2);
+		@include omega(2);
+	}
+}
+
+div.dark {
+	background: darken($blue, 4%);
+}
+
 footer {
+	// border-top: 0.4em solid $red;
+	overflow: auto;
 	padding: 2rem 0;
-	color: darken($gray, 5%);
+
 	background: darken($blue, 5%);
 	span {
+		color: $dark-gray;
 		@include span-columns(2);
 	}
 	a {
 		text-align: right;
 		@include span-columns(2);
-		color: $gray;
+		color: $dark-gray;
 	}
 	section {
 		margin-bottom: 0;
