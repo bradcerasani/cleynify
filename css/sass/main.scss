@@ -267,10 +267,8 @@ div.dark {
 }
 
 footer {
-	// border-top: 0.4em solid $red;
 	overflow: auto;
 	padding: 2rem 0;
-
 	background: darken($blue, 8%);
 	span {
 		color: $dark-gray;
@@ -283,6 +281,7 @@ footer {
 	}
 	section {
 		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 }
 
